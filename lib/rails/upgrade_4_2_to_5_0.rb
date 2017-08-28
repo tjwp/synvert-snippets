@@ -220,7 +220,7 @@ Rails.application.config.ssl_options = { hsts: { subdomains: true } }
           options << make_up_hash_pair('params', node.arguments[1])
           options << make_up_hash_pair('flash', node.arguments[2]) if node.arguments.size > 2
           options << make_up_hash_pair('session', node.arguments[3]) if node.arguments.size > 3
-          replace_with "#{message} {{arguments.first}}, #{options.compact.join(', ')}"
+          replace_with "#{message}({{arguments.first}}, #{options.compact.join(', ')})"
         end
       end
     end
